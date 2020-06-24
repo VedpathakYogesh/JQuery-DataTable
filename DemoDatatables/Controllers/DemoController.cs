@@ -56,7 +56,9 @@ namespace DemoDatatables.Controllers
                 {
                     // customerData = customerData.Where(m => m.CompanyName == searchValue).ToList();
 
-                    customerData  = _context.Customers.Where(x => x.CompanyName.Contains(searchValue)).ToList();
+                    // Contains Added fro search relevent data from list 
+
+                    customerData = _context.Customers.Where(x => x.CompanyName.Contains(searchValue)).ToList();
 
                 //    customerData = customerData.Where(m => m.CompanyName.StartsWith("searchValue")).ToList();
                 }
