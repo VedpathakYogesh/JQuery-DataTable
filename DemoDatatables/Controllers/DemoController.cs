@@ -17,12 +17,19 @@ namespace DemoDatatables.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// Show Grid table
+        /// </summary>
+        /// <returns></returns>
         public ActionResult ShowGrid()
         {
             return View();
         }
 
+        /// <summary>
+        /// Data onlad function
+        /// </summary>
+        /// <returns></returns>
         public ActionResult LoadData()
         {
             try
