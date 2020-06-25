@@ -213,6 +213,7 @@
     <Content Include="Views\Demo\ShowGrid.cshtml" />
     <Content Include="Views\Demo\DeleteCustomer.cshtml" />
     <Content Include="Views\Demo\Edit.cshtml" />
+    <Content Include="Views\Demo\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

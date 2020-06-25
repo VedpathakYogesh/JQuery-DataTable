@@ -13,6 +13,29 @@ namespace DemoDatatables.Controllers
     {
         // GET: Demo
         NorthwindEntities _context = new NorthwindEntities();
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create( Customer cs)
+        {
+            if (cs != null)
+            {
+
+                _context.Customers.Add(cs);
+                _context.SaveChanges();
+
+                return RedirectToAction("ShowGrid");
+            }
+            else
+            {
+                return View("ShowGrid");
+            }
+        }
         public ActionResult Index()
         {
             return View();
@@ -135,7 +158,11 @@ namespace DemoDatatables.Controllers
         //{
         //    return View();
         //}
-
+        /// <summary>
+        /// DeleteCustomer
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         [HttpPost]
         public JsonResult DeleteCustomer(int? ID)
         {
