@@ -15,6 +15,10 @@ namespace CrudApplication.Controllers
             return View();
         }
 
+        /// <summary>
+        /// GetEmployees
+        /// </summary>
+        /// <returns></returns>
         public ActionResult GetEmployees()
         {
             using (NorthwindEntities Db = new NorthwindEntities())
@@ -25,12 +29,21 @@ namespace CrudApplication.Controllers
            
         }
 
+        /// <summary>
+        /// Render partial view 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult Save()
         {  
            return View();
         }
 
+        /// <summary>
+        /// Save Data into Database
+        /// </summary>
+        /// <param name="emp"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Save(Employee emp)
         {
@@ -64,7 +77,13 @@ namespace CrudApplication.Controllers
             return new JsonResult { Data = new { status = status } };
         }
 
+        /// <summary>
+        /// Delete get Id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
+        
         public ActionResult Delete(int id)
         {
             using (NorthwindEntities dc = new NorthwindEntities())
@@ -81,6 +100,11 @@ namespace CrudApplication.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete Row From table
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult DeleteEmployee(int id)
