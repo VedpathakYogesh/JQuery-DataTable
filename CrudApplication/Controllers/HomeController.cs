@@ -25,6 +25,8 @@ namespace CrudApplication.Controllers
             {
                 var employee = Db.Employees.OrderBy(a=>a.FirstName).ToList();
                 return Json(new { data = employee }, JsonRequestBehavior.AllowGet);
+
+               // return Json(new { data = employee }, JsonRequestBehavior.AllowGet);
             }
            
         }
